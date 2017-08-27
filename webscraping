@@ -1,0 +1,6 @@
+library(rvest)
+weatherlink<-read_html("http://forecast.weather.gov/MapClick.php?lat=42.71&lon=-84.57#.WZq3GSgjHDc")
+forecasthtml<-html_nodes(weatherlink,"#detailed-forecast-b,.forecast-text")
+forecasttext<-html_text(forecasthtml)
+forecasttext
+paste(forecasttext,collapse = " ")
